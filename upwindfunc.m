@@ -42,14 +42,14 @@ fu(1,1)= (K1/h/h + K2/h)*K2/K1*h;
 fv(1,1)= (K5/h/h + K6/h)*K6/K5*h;
 
 for i = 1:m
-    %u(1:N,i+1) = (eye(N,N) - dt*Au)\(u(1:N,i)+(K3*g(u(1:N,i)).*(1 - v(1:N,i))...
-    %                                +K4 + fu)*dt);
-    %v(1:N,i+1) = (eye(N,N) - dt*Av)\(v(1:N,i)+K7*g(u(1:N,i)).*(1 - v(1:N, ...
-    %i))*dt);
+    u(1:N,i+1) = (eye(N,N) - dt*Au)\(u(1:N,i)+(K3*g(u(1:N,i)).*(1 - v(1:N,i))...
+                                    +K4 + fu)*dt);
+    v(1:N,i+1) = (eye(N,N) - dt*Av)\(v(1:N,i)+K7*g(u(1:N,i)).*(1 - v(1:N, ...
+    i))*dt);
 %    u(1:N,i+1) = (eye(N,N) - dt*Au)\(u(1:N,i));
 %    v(1:N,i+1) = (eye(N,N) - dt*Av)\(v(1:N,i));
-    u(1:N,i+1) = (eye(N,N) - dt*Au)\(u(1:N,i)+fu*dt +K4*dt);
-    v(1:N,i+1) = (eye(N,N) - dt*Av)\(v(1:N,i)+fv*dt);
+%u(1:N,i+1) = (eye(N,N) - dt*Au)\(u(1:N,i)+fu*dt +K4*dt);
+%v(1:N,i+1) = (eye(N,N) - dt*Av)\(v(1:N,i)+fv*dt);
 i
 end
 
