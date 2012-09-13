@@ -1,0 +1,5 @@
+1. the upwind method fails, if we use old solution for the nonlinear term
+\item Including the nonlinear term, the methed for the IVP problem fails to converge.
+
+\item Without the nonlinear term, the method for the IVP problem converges.
+
